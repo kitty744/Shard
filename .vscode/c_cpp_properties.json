@@ -6,9 +6,9 @@
                 "${workspaceFolder}/Shard/src",
                 "${workspaceFolder}/Shard/vendor",
                 "/usr/include",
-                "/usr/include/c++/15",           // ADD THIS (your GCC version)
+                "/usr/include/c++/15",
                 "/usr/include/x86_64-linux-gnu",
-                "/usr/include/x86_64-linux-gnu/c++/15"  // ADD THIS
+                "/usr/include/x86_64-linux-gnu/c++/15"
             ],
             "defines": [
                 "SHARD_PLATFORM_LINUX",
