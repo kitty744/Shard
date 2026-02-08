@@ -1,0 +1,40 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All files
+[*]
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# C++ Source Files
+[*.{cpp,h,hpp,c}]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+
+# Lua files (for premake)
+[*.lua]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+
+# Makefile
+[Makefile]
+indent_style = tab
+
+# Markdown
+[*.md]
+trim_trailing_whitespace = false
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2

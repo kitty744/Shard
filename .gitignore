@@ -1,0 +1,91 @@
+# Build artifacts
+bin/
+bin-int/
+*.so
+*.a
+*.o
+*.out
+
+# Premake generated files
+Makefile
+*.make
+*.workspace
+*.project
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+
+# Compiled Object files
+*.slo
+*.lo
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so.*
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.lib
+
+# Executables
+*.exe
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Editor/IDE files
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-*
+.DS_Store
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+!CMakeLists.txt
+
+# Vendor libraries
+# vendor/*/
+# !vendor/*/.gitkeep
+
+# Log files
+*.log
+
+# Core dumps
+core
+core.*
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# OS specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
