@@ -8,7 +8,6 @@ int main(int argc, char **argv)
 {
     Shard::Log::Init();
     SHARD_CORE_WARN("Initialized Log!");
-    SHARD_INFO("Hello from client!");
 
     auto app = Shard::CreateApplication();
     app->Run();

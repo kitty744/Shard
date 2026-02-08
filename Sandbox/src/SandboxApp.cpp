@@ -5,7 +5,6 @@ class Sandbox : public Shard::Application
 public:
     Sandbox()
     {
-        SHARD_INFO("Sandbox created!");
     }
 
     ~Sandbox()

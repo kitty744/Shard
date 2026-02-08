@@ -2,28 +2,6 @@
 
 A modern, lightweight game engine built in C++ for Linux, inspired by Hazel Engine.
 
-## Features
-
-- **Cross-platform foundation** (currently Linux, Windows support planned)
-- **Modern C++17** codebase
-- **Modular architecture** with clean separation between engine and client code
-- **Logging system** with spdlog integration
-- **Event-driven architecture** (coming soon)
-- **OpenGL rendering** (coming soon)
-- **ImGui integration** for debugging (planned)
-
-## Current Status
-
-🚧 **Early Development** - Basic engine foundation is complete:
-
-- ✅ Application framework
-- ✅ Logging system
-- ✅ Entry point abstraction
-- ✅ Build system (Premake5)
-- 🔄 Window management (in progress)
-- 🔄 Event system (planned)
-- 🔄 Rendering (planned)
-
 ## Building
 
 ### Prerequisites
@@ -74,19 +52,6 @@ To build a specific configuration:
 make config=release
 ```
 
-## Project Structure
-
-```
-Shard/
-├── Shard/          # Core engine library
-│   └── src/
-│       ├── Shard/  # Engine source files
-│       └── vendor/ # Third-party libraries
-├── Sandbox/        # Example application
-│   └── src/
-└── premake5.lua    # Build configuration
-```
-
 ## Usage
 
 Create a new application by inheriting from `Shard::Application`:
@@ -112,23 +77,6 @@ Shard::Application* Shard::CreateApplication()
     return new MyApp();
 }
 ```
-
-## Roadmap
-
-- [x] Basic application framework
-- [x] Logging system
-- [ ] Window creation (GLFW)
-- [ ] Event system
-- [ ] Input handling
-- [ ] Rendering abstraction layer
-- [ ] OpenGL renderer
-- [ ] ImGui integration
-- [ ] Layer system
-- [ ] Entity Component System (ECS)
-- [ ] Scene management
-- [ ] Asset management
-- [ ] Physics integration
-- [ ] Audio system
 
 ## License
 
