@@ -54,10 +54,10 @@ smake dev
 
 ```bash
 # Generate project files
-./setup.sh
+scripts/setup.sh
 
 # Build and run
-./dev.sh
+scripts/dev.sh
 
 # Or manually
 make
