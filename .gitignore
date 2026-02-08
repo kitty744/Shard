@@ -51,7 +51,8 @@ Makefile
 *.pdb
 
 # Editor/IDE files
-.vscode/
+.vscode/*.log
+.vscode/ipch/
 .vs/
 *.swp
 *.swo
