@@ -8,6 +8,7 @@
 #include "Shard/Core/Input.h"
 #include "Shard/Core/KeyCodes.h"
 #include "Shard/Core/MouseCodes.h"
+#include "Shard/Core/Timestep.h"
 
 // ---Entry Point-------------------
 #include "Shard/Core/EntryPoint.h"

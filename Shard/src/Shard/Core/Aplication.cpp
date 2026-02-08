@@ -56,14 +56,20 @@ namespace Shard
     void Application::Run()
     {
 
+        float lastFrameTime = 0.0f;
+
         while (m_Running)
         {
+            float time = (float)glfwGetTime();
+            Timestep timestep = time - lastFrameTime;
+            lastFrameTime = time;
+
             glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            // Update all layers
+            // Update all layers with delta time
             for (Layer *layer : m_LayerStack)
-                layer->OnUpdate();
+                layer->OnUpdate(timestep);
 
             m_Window->OnUpdate();
         }
