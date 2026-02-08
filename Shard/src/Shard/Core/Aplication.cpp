@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "Input.h"
 #include "KeyCodes.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Shard
@@ -22,12 +23,28 @@ namespace Shard
     {
     }
 
+    void Application::PushLayer(Layer *layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer *overlay)
+    {
+        m_LayerStack.PushOverlay(overlay);
+    }
+
     void Application::OnEvent(Event &e)
     {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(SHARD_BIND_EVENT_FN(Application::OnWindowClose));
 
-        SHARD_CORE_TRACE("{0}", e);
+        // Propagate events through layers (back to front)
+        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+        {
+            (*--it)->OnEvent(e);
+            if (e.Handled)
+                break;
+        }
     }
 
     bool Application::OnWindowClose(WindowCloseEvent &e)
@@ -38,18 +55,15 @@ namespace Shard
 
     void Application::Run()
     {
-        SHARD_CORE_INFO("Application running!");
 
         while (m_Running)
         {
-            if (Input::IsKeyPressed(SHARD_KEY_ESCAPE))
-            {
-                SHARD_CORE_INFO("Escape pressed! Closing...");
-                m_Running = false;
-            }
-
             glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            // Update all layers
+            for (Layer *layer : m_LayerStack)
+                layer->OnUpdate();
 
             m_Window->OnUpdate();
         }
