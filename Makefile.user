@@ -31,12 +31,12 @@ clean: chmod
 # Help message
 help:
 	@echo "Shard Engine - Available targets:"
-	@echo "  make chmod  - Make all scripts executable"
-	@echo "  make setup  - Generate project files with Premake"
-	@echo "  make build  - Compile the project"
-	@echo "  make run    - Run the Sandbox application"
-	@echo "  make dev    - Build and run (recommended for development)"
-	@echo "  make clean  - Clean all build artifacts"
+	@echo "  smake chmod  - Make all scripts executable"
+	@echo "  smake setup  - Generate project files with Premake"
+	@echo "  smake build  - Compile the project"
+	@echo "  smake run    - Run the Sandbox application"
+	@echo "  smake dev    - Build and run (recommended for development)"
+	@echo "  smake clean  - Clean all build artifacts"
 	@echo "  make help   - Show this help message"
 
 # Default target
