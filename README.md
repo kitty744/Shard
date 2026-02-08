@@ -30,13 +30,37 @@ sudo mv premake5 /usr/local/bin/
 git clone https://github.com/kitty744/Shard
 cd Shard
 
+# Setup the smake alias (one-time)
+echo "alias smake='make -f Makefile.user'" >> ~/.bashrc
+source ~/.bashrc
+
 # Generate project files
-premake5 gmake2
+smake setup
 
-# Build
+# Build and run
+smake dev
+```
+
+**Available smake commands:**
+
+- `smake setup` - Generate project files with Premake
+- `smake dev` - Build and run (recommended for development)
+- `smake build` - Build only
+- `smake run` - Run only
+- `smake clean` - Clean build artifacts
+- `smake help` - Show all available commands
+
+**Alternative (without smake):**
+
+```bash
+# Generate project files
+./setup.sh
+
+# Build and run
+./dev.sh
+
+# Or manually
 make
-
-# Run the Sandbox demo
 ./bin/Debug-linux-x86_64/Sandbox/Sandbox
 ```
 

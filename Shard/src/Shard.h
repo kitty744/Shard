@@ -2,9 +2,9 @@
 
 // For use by Shard applications
 
-#include "Shard/Application.h"
-#include "Shard/Log.h"
+#include "Shard/Core/Application.h"
+#include "Shard/Core/Log.h"
 
 // ---Entry Point-------------------
-#include "Shard/EntryPoint.h"
+#include "Shard/Core/EntryPoint.h"
 // ---------------------------------

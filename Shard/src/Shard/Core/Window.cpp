@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "Shard/Log.h"
+#include "Log.h"
 
 namespace Shard
 {

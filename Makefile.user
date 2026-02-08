@@ -1,0 +1,43 @@
+# Shard Engine - User Makefile
+# Convenient targets that wrap the build scripts
+
+.PHONY: setup build run dev clean chmod help
+
+# Make scripts executable (run this first!)
+chmod:
+	@chmod +x scripts/setup.sh scripts/build.sh scripts/run.sh scripts/clean.sh scripts/dev.sh
+	@echo "Scripts are now executable!"
+
+# Generate project files
+setup: chmod
+	@scripts/setup.sh
+
+# Build the project
+build: chmod
+	@scripts/build.sh
+
+# Run the Sandbox app
+run: chmod
+	@scripts/run.sh
+
+# Build and run (most useful for development!)
+dev: chmod
+	@scripts/dev.sh
+
+# Clean build artifacts
+clean: chmod
+	@scripts/clean.sh
+
+# Help message
+help:
+	@echo "Shard Engine - Available targets:"
+	@echo "  make chmod  - Make all scripts executable"
+	@echo "  make setup  - Generate project files with Premake"
+	@echo "  make build  - Compile the project"
+	@echo "  make run    - Run the Sandbox application"
+	@echo "  make dev    - Build and run (recommended for development)"
+	@echo "  make clean  - Clean all build artifacts"
+	@echo "  make help   - Show this help message"
+
+# Default target
+.DEFAULT_GOAL := help
