@@ -3,6 +3,9 @@
 #include "Core.h"
 #include "Window.h"
 
+#include "../Events/Event.h"
+#include "../Events/ApplicationEvent.h"
+
 #include <memory>
 
 namespace Shard
@@ -15,6 +18,10 @@ namespace Shard
         virtual ~Application();
 
         void Run();
+        void OnEvent(Event &e);
+
+    private:
+        bool OnWindowClose(WindowCloseEvent &e);
 
     private:
         std::unique_ptr<Window> m_Window;
