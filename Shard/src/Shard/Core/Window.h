@@ -5,6 +5,7 @@
 
 #include <string>
 #include <functional>
+
 #include <GLFW/glfw3.h>
 
 namespace Shard

@@ -6,7 +6,6 @@
 
 #include "../Events/Event.h"
 #include "../Events/ApplicationEvent.h"
-
 #include <memory>
 
 namespace Shard

@@ -22,6 +22,9 @@ project "Shard"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "shpch.h"
+    pchsource "Shard/src/shpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
@@ -112,7 +115,6 @@ project "Sandbox"
             "SHARD_PLATFORM_LINUX"
         }
 
-        -- Set rpath so it can find the Shard shared library
         linkoptions { "-Wl,-rpath,$$ORIGIN/../Shard" }
 
     filter "configurations:Debug"

@@ -6,7 +6,9 @@
                 "${workspaceFolder}/Shard/src",
                 "${workspaceFolder}/Shard/vendor",
                 "/usr/include",
-                "/usr/include/x86_64-linux-gnu"
+                "/usr/include/c++/15",           // ADD THIS (your GCC version)
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include/x86_64-linux-gnu/c++/15"  // ADD THIS
             ],
             "defines": [
                 "SHARD_PLATFORM_LINUX",
@@ -16,7 +18,10 @@
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "forcedInclude": [
+                "${workspaceFolder}/Shard/src/shpch.h"
+            ]
         }
     ],
     "version": 4
