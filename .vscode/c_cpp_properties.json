@@ -5,6 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/Shard/src",
                 "${workspaceFolder}/Shard/vendor",
+                "${workspaceFolder}/Shard/vendor/glm",
+                "${workspaceFolder}/Shard/vendor/glad/include",
                 "/usr/include",
                 "/usr/include/c++/15",
                 "/usr/include/x86_64-linux-gnu",

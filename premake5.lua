@@ -28,7 +28,8 @@ project "Shard"
     files
     {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glad/src/glad.c"
     }
 
     includedirs
@@ -36,6 +37,7 @@ project "Shard"
         "%{prj.name}/src",
         "%{prj.name}/vendor",
         "%{prj.name}/vendor/glm",
+        "%{prj.name}/vendor/glad/include",
         "/usr/include"
     }
 
@@ -99,6 +101,7 @@ project "Sandbox"
         "Shard/src",
         "Shard/vendor",
         "Shard/vendor/glm",
+        "Shard/vendor/glad/include",
         "/usr/include"
     }
 

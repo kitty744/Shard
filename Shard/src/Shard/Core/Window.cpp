@@ -1,5 +1,4 @@
 #include "Window.h"
-#include "Log.h"
 
 #include "../Events/ApplicationEvent.h"
 #include "../Events/KeyEvent.h"
@@ -36,13 +35,23 @@ namespace Shard
         if (!s_GLFWInitialized)
         {
             int success = glfwInit();
-            SHARD_CORE_ASSERT(success, "Could not initialize GLFW!");
+            SHARD_CORE_ASSERT(success, "Could not initialize GLAD!");
             glfwSetErrorCallback(GLFWErrorCallback);
             s_GLFWInitialized = true;
         }
 
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+
+        // Initialize GLAD
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        SHARD_CORE_ASSERT(status, "Failed to initialize GLAD!");
+
+        SHARD_CORE_INFO("OpenGL Info:");
+        SHARD_CORE_INFO("  Vendor: {0}", (const char *)glGetString(GL_VENDOR));
+        SHARD_CORE_INFO("  Renderer: {0}", (const char *)glGetString(GL_RENDERER));
+        SHARD_CORE_INFO("  Version: {0}", (const char *)glGetString(GL_VERSION));
+
         glfwSetWindowUserPointer(m_Window, &m_Data);
 
         // Set VSync
