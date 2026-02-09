@@ -35,6 +35,7 @@ project "Shard"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor",
+        "%{prj.name}/vendor/glm",
         "/usr/include"
     }
 
@@ -97,6 +98,7 @@ project "Sandbox"
     {
         "Shard/src",
         "Shard/vendor",
+        "Shard/vendor/glm",
         "/usr/include"
     }
 

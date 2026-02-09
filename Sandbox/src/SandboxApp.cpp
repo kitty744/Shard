@@ -1,40 +1,22 @@
 #include <Shard.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
 class ExampleLayer : public Shard::Layer
 {
 public:
-    ExampleLayer()
-        : Layer("Example"), m_Position(0.0f)
-    {
-    }
+    ExampleLayer() : Layer("Example") {}
 
     void OnUpdate(Shard::Timestep ts) override
     {
-        // Frame-independent movement!
-        if (Shard::Input::IsKeyPressed(SHARD_KEY_A))
-            m_Position -= m_Speed * ts;
+        // Test GLM!
+        glm::vec3 position(0.0f, 0.0f, 0.0f);
+        glm::mat4 transform = glm::translate(glm::mat4(1.0f), position);
 
-        if (Shard::Input::IsKeyPressed(SHARD_KEY_D))
-            m_Position += m_Speed * ts;
-
-        // Log FPS every second
-        m_Timer += ts;
-        if (m_Timer >= 1.0f)
-        {
-            SHARD_INFO("FPS: {0} | Position: {1}", 1.0f / ts, m_Position);
-            m_Timer = 0.0f;
-        }
+        SHARD_INFO("GLM works! Position: {0}, {1}, {2}",
+                   position.x, position.y, position.z);
     }
-
-    void OnEvent(Shard::Event &event) override
-    {
-        // Events still work!
-    }
-
-private:
-    float m_Position = 0.0f;
-    float m_Speed = 100.0f; // 100 units per second
-    float m_Timer = 0.0f;
 };
 
 class Sandbox : public Shard::Application
